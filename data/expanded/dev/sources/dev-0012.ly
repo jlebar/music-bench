@@ -23,13 +23,13 @@
     \time 4/4
     \absolute {
       f,4 bes4 ees,2 |
-      fes2 a2 |
-      c'4 c8 c8 f,4 |
-      b8 ees,8 f4 ces'4 |
-      ees,4 ees,8 bes,8 a4 |
-      a4 des4 f4 d4 |
-      ais4 f4 f8 a8 |
-      g8 a,8 f,4 a,4
+      bes,4 fes8 c8 fis,8 f,8 ais,4 |
+      c'4 c8 c8 f,4 a4 |
+      b8 ees,8 f4 ces'4 fis4 |
+      ees,4 ees,8 bes,8 a4 d4 |
+      ees,4 a,8 a,8 d8 des8 cis4 |
+      ais4 f4 f8 a8 g4 |
+      g8 a,8 f,4 a,4 g,4
       \bar "|."
     }
   }

@@ -22,11 +22,11 @@
     \key d \major
     \time 4/4
     \absolute {
-      g'4 ges''4 g'8 ces'8 |
+      g'4 ges''4 g'8 ces'8 b'4 |
       e'2 d''4 g'4 |
       g'4 b'4 fis''2 |
-      d'4 g''8 a'8 d''8 d'8 |
-      eis'4 fis''8 g'8 a''8 fis'8 |
+      d'8 g''8 a'8 d''8 d'4 g''4 |
+      eis'8 fis''8 g'8 a''8 fis'4 a''4 |
       cis'4 fis'4 d''4 g''4 |
       e''4 a''4 d'4 b'4 |
       fis'2 g''4 cis''4

@@ -23,7 +23,7 @@
     \time 2/4
     \absolute {
       fis,2 |
-      c8 b8 fis4 |
+      c8 a8 e8 ges,8 |
       dis2 |
       e4 cis8 g8
       \bar "|."

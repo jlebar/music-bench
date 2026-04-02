@@ -25,7 +25,7 @@
       bes,4 g,8 a,8 |
       bes,4 a,4 |
       bes,2 |
-      e4 g8 des8 |
+      bis8 ees8 ges8 d8 |
       f,4 ges8 d8
       \bar "|."
     }

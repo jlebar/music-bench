@@ -22,10 +22,10 @@
     \key c \major
     \time 4/4
     \absolute {
-      des8 bes8 g4 dis4 |
-      gis8 f,8 a,8 b8 f4 |
-      bes,4 g,4 eis8 a8 |
-      a,4 b,8 c'8 eis,4 |
+      des8 bes8 g4 dis4 g,4 |
+      gis4 f,4 a,4 b8 f8 |
+      bes,4 g,4 e8 a8 ees4 |
+      a,4 b,8 c'8 eis,4 c'4 |
       aes,4 e4 c'4 e,4
       \bar "|."
     }

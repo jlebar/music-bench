@@ -22,12 +22,12 @@
     \key bes \major
     \time 3/4
     \absolute {
-      ees8 f,8 eis4 |
-      d8 gis,8 bis8 a,8 f4 |
-      eis,8 a,8 bes,8 d8 eis4 |
-      bes8 fes8 a8 f,8 ees,4 |
-      g,4 d8 ces8 |
-      bes,2 c4
+      ees8 f,8 eis8 d8 ees4 |
+      bis8 bis8 a,8 f8 c'4 |
+      ees,4 a,4 bes,4 |
+      bes4 a2 |
+      f4 bes2 |
+      bes,4 c2
       \bar "|."
     }
   }

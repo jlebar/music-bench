@@ -20,9 +20,9 @@ On the current 48-example hidden `private_test` split:
 
 | Model | Exact Match | Avg F1 | Edit Distance |
 | --- | ---: | ---: | ---: |
-| `gpt-5.4` | 4.2% | 0.2192 | 2.9167 |
-| `claude-opus-4-6` | 0.0% | 0.1020 | 4.0208 |
-| `gemini-3-flash-preview` | 2.1% | 0.2380 | 3.1042 |
+| `gpt-5.4` | 8.3% | 0.3265 | 2.9375 |
+| `claude-opus-4-6` | 0.0% | 0.1027 | 4.6042 |
+| `gemini-3-flash-preview` | 4.2% | 0.2657 | 3.4583 |
 
 (`Exact Match` is the fraction of tests that the model gets exactly correct.
 `Avg F1` is the average of the
@@ -46,13 +46,13 @@ Target measure: `1`
 Correct output:
 
 ```json
-{"notes":["F4","A4","F5","A4"]}
+{"notes":["F4","A4","F5","A4","G5"]}
 ```
 
 `gpt-5.4`:
 
 ```json
-{"notes":["E4","A4","F5","A4","G4"]}
+{"notes":["E4","F4","F5","F4","G5"]}
 ```
 
 `claude-opus-4-6`:
@@ -64,7 +64,7 @@ Correct output:
 `gemini-3-flash-preview`:
 
 ```json
-{"notes":["D4","F4","A4","F4","D4"]}
+{"notes":["A4","C5","E5","B4","D5"]}
 ```
 
 Everything below here is AI slop that I didn't bother to read.  Good luck.

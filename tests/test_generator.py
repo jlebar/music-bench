@@ -5,6 +5,7 @@ from pathlib import Path
 
 from music_bench.generator import generate_split
 from music_bench.lilypond import load_manifest
+from music_bench.music import expected_measure_units, duration_units
 
 
 class GeneratorTests(unittest.TestCase):
@@ -36,7 +37,24 @@ class GeneratorTests(unittest.TestCase):
             note_counts = {example.metadata["note_count"] for example in examples}
             self.assertGreater(len(note_counts), 1)
 
+    def test_measures_match_time_signature(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            manifest_path = generate_split(Path(tmpdir), "dev", example_count=12, seed=321)
+            examples = load_manifest(manifest_path)
+            for example in examples:
+                expected = expected_measure_units(example.metadata["time_signature"])
+                lilypond_path = example.resolved_lilypond_path(manifest_path)
+                source = lilypond_path.read_text(encoding="utf-8")
+                body = source.split("\\absolute {", 1)[1].split("\\bar", 1)[0]
+                measures = [measure.strip() for measure in body.split("|") if measure.strip()]
+                for measure in measures:
+                    total = 0
+                    for token in measure.split():
+                        digits = "".join(char for char in token if char.isdigit())
+                        if digits:
+                            total += duration_units(int(digits))
+                    self.assertEqual(total, expected, msg=f"{example.id} has malformed measure: {measure}")
+
 
 if __name__ == "__main__":
     unittest.main()
-

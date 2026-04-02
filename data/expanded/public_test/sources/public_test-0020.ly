@@ -22,10 +22,10 @@
     \key f \major
     \time 3/4
     \absolute {
-      e,2 g,4 |
-      c8 g8 fis,4 |
-      f,8 f8 fes8 bes,8 c4 |
-      d4 c8 bes,8
+      e,8 g,8 c'4 d4 |
+      c8 g8 fis,8 aes8 bes4 |
+      e2 a4 |
+      c'8 d8 g8 bes8 f,4
       \bar "|."
     }
   }

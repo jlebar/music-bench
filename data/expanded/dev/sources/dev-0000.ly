@@ -23,7 +23,7 @@
     \time 2/4
     \absolute {
       gis'4 b'4 |
-      gis''8 a''8 cis''4 |
+      e''8 gis''8 a''8 cis''8 |
       b'4 eis''4 |
       b'2 |
       f''2

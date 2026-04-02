@@ -23,8 +23,8 @@
     \time 4/4
     \absolute {
       c'2 fis'2 |
-      e''8 a''8 cis'4 d''4 |
-      cis'4 d'4 bis'4 e'4 |
+      e''8 a''8 cis'4 d''4 fis'4 |
+      ces'8 g'8 d''4 d''8 g'8 e'4 |
       b'4 d''4 fis'2 |
       b'4 d''4 b'4 d'4
       \bar "|."

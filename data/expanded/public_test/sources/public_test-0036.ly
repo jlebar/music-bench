@@ -24,7 +24,7 @@
     \absolute {
       ges'2 |
       bes'2 |
-      f''2 |
+      d''8 f''8 g''8 g''8 |
       ees''4 a''4 |
       a''4 g''4 |
       gis''4 g''4 |
