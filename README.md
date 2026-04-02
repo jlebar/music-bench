@@ -21,7 +21,7 @@ On the current 48-example hidden `private_test` split:
 | Model | Exact Match | Note F1 | Edit Distance |
 | --- | ---: | ---: | ---: |
 | `gpt-5.4` | 4.2% | 0.2192 | 2.9167 |
-| `claude-sonnet-4-6` | 0.0% | 0.1281 | 3.9792 |
+| `claude-opus-4-6` | 0.0% | 0.1020 | 4.0208 |
 | `gemini-3-flash-preview` | 2.1% | 0.2380 | 3.1042 |
 
 (`Exact Match` is the fraction of tests that the model gets exactly correct.
@@ -54,10 +54,10 @@ Correct output:
 {"notes":["E4","A4","F5","A4","G4"]}
 ```
 
-`claude-sonnet-4-6`:
+`claude-opus-4-6`:
 
 ```json
-{"notes":["C4","D4","E4","F4","G4","A4"]}
+{"notes":["E4","F4","G4","E4","C4","D4","E4","F4"]}
 ```
 
 `gemini-3-flash-preview`:
