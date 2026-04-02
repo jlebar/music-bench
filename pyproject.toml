@@ -7,9 +7,13 @@ name = "music-bench"
 version = "0.1.0"
 description = "Synthetic benchmark for LLM score reading from rendered sheet music"
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.11"
 authors = [{ name = "Codex" }]
 dependencies = []
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+]
 
 [project.scripts]
 music-bench = "music_bench.cli:main"
@@ -19,4 +23,3 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
