@@ -1,6 +1,6 @@
 # music-bench
 
-tl;dr - As of 2026-04-01, models are quite bad at reading music.  Friends at
+> tl;dr - As of 2026-04-01, models are quite bad at reading music.  Friends at
 OpenAI, Anthropic, and Google: Please saturate this benchmark!  kthx.
 
 This repo benchmarks the performance of an LLM on the task of musical OCR.  The
@@ -18,14 +18,14 @@ looked at any of the code.
 
 On the current 48-example hidden `private_test` split:
 
-| Provider | Model | Exact Match | Note F1 | Edit Distance |
-| --- | --- | ---: | ---: | ---: |
-| OpenAI | `gpt-5.4` | 0.0417 | 0.2192 | 2.9167 |
-| Anthropic | `claude-sonnet-4-6` | 0.0000 | 0.1281 | 3.9792 |
-| Google | `gemini-3-flash-preview` | 0.0208 | 0.2380 | 3.1042 |
+| Model | Exact Match | Note F1 | Edit Distance |
+| --- | ---: | ---: | ---: |
+| `gpt-5.4` | 4.2% | 0.2192 | 2.9167 |
+| `claude-sonnet-4-6` | 0.0% | 0.1281 | 3.9792 |
+| `gemini-3-flash-preview` | 2.1% | 0.2380 | 3.1042 |
 
-("Exact Match" is the fraction of tests that the model gets right.  Note F1 is
-the aggregate [F-score](https://en.wikipedia.org/wiki/F-score).)
+(`Exact Match` is the fraction of tests that the model gets exactly correct.
+`Note F1` is the aggregate [F-score](https://en.wikipedia.org/wiki/F-score).)
 
 These numbers come from a split generated from a private seed that's not
 committed to the repo.  The results on the public dataset are similar.
@@ -48,19 +48,19 @@ Correct output:
 {"notes":["F4","A4","F5","A4"]}
 ```
 
-OpenAI `gpt-5.4`:
+`gpt-5.4`:
 
 ```json
 {"notes":["E4","A4","F5","A4","G4"]}
 ```
 
-Anthropic `claude-sonnet-4-6`:
+`claude-sonnet-4-6`:
 
 ```json
 {"notes":["C4","D4","E4","F4","G4","A4"]}
 ```
 
-Google `gemini-3-flash-preview`:
+`gemini-3-flash-preview`:
 
 ```json
 {"notes":["D4","F4","A4","F4","D4"]}
