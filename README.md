@@ -18,14 +18,15 @@ looked at any of the code.
 
 On the current 48-example hidden `private_test` split:
 
-| Model | Exact Match | Note F1 | Edit Distance |
+| Model | Exact Match | Avg F1 | Edit Distance |
 | --- | ---: | ---: | ---: |
 | `gpt-5.4` | 4.2% | 0.2192 | 2.9167 |
 | `claude-opus-4-6` | 0.0% | 0.1020 | 4.0208 |
 | `gemini-3-flash-preview` | 2.1% | 0.2380 | 3.1042 |
 
 (`Exact Match` is the fraction of tests that the model gets exactly correct.
-`Note F1` is the aggregate [F-score](https://en.wikipedia.org/wiki/F-score).)
+`Avg F1` is the average of the
+[F-scores](https://en.wikipedia.org/wiki/F-score) from each testcase.)
 
 These numbers come from a split generated from a private seed that's not
 committed to the repo.  The results on the public dataset are similar.
