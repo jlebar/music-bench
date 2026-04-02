@@ -1,0 +1,18 @@
+[benchmark]
+version = "v1"
+private_seed_env = "MUSIC_BENCH_PRIVATE_TEST_SEED"
+private_seed_file = ".music-bench-private-seed"
+
+[splits.dev]
+seed = 101
+default_count = 16
+visibility = "public"
+
+[splits.public_test]
+seed = 202
+default_count = 64
+visibility = "public"
+
+[splits.private_test]
+default_count = 64
+visibility = "private"
