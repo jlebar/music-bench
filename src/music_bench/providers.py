@@ -110,8 +110,9 @@ class OpenAIAdapter:
         }
         if model_config.temperature not in (None, 0.0):
             payload["temperature"] = model_config.temperature
-        if model_config.reasoning_effort is not None:
-            payload["reasoning"] = {"effort": model_config.reasoning_effort}
+        reasoning_effort = openai_reasoning_effort(model_config.model, model_config.reasoning_effort)
+        if reasoning_effort is not None:
+            payload["reasoning"] = {"effort": reasoning_effort}
         response = http_post_json(self.endpoint, payload, headers={"Authorization": f"Bearer {api_key}"})
         raw_text = ""
         if "output_text" in response:
@@ -142,7 +143,6 @@ class AnthropicAdapter:
         payload = {
             "model": model_config.model,
             "max_tokens": model_config.max_tokens,
-            "temperature": model_config.temperature,
             "messages": [
                 {
                     "role": "user",
@@ -163,6 +163,8 @@ class AnthropicAdapter:
                 }
             ],
         }
+        if model_config.temperature not in (None, 0.0):
+            payload["temperature"] = model_config.temperature
         response = http_post_json(
             self.endpoint,
             payload,
@@ -173,6 +175,14 @@ class AnthropicAdapter:
         )
         parts = [part.get("text", "") for part in response.get("content", []) if part.get("type") == "text"]
         return ProviderResponse(raw_text="\n".join(parts).strip(), usage=response.get("usage"), status=response.get("stop_reason"))
+
+
+def openai_reasoning_effort(model_name: str, reasoning_effort: str | None) -> str | None:
+    if reasoning_effort is not None:
+        return reasoning_effort
+    if model_name.startswith("gpt-5.5"):
+        return "none"
+    return None
 
 
 class GoogleAdapter:

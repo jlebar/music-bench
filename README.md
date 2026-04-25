@@ -1,6 +1,6 @@
 # music-bench
 
-> tl;dr - As of 2026-04-01, models are quite bad at reading music.  Friends at
+> tl;dr - As of 2026-04-25, models are quite bad at reading music.  Friends at
 OpenAI, Anthropic, and Google: Please saturate this benchmark!  kthx.
 
 This repo benchmarks the performance of an LLM on the task of musical OCR.  The
@@ -21,7 +21,8 @@ On the current 48-example hidden `private_test` split:
 | Model | Exact Match | Avg F1 | Edit Distance |
 | --- | ---: | ---: | ---: |
 | `gpt-5.4` | 8.3% | 0.3265 | 2.9375 |
-| `claude-opus-4-6` | 0.0% | 0.1027 | 4.6042 |
+| `gpt-5.5` | 0.0% | 0.1581 | 3.7708 |
+| `claude-opus-4-7` | 2.1% | 0.1647 | 3.5833 |
 | `gemini-3-flash-preview` | 4.2% | 0.2657 | 3.4583 |
 
 (`Exact Match` is the fraction of tests that the model gets exactly correct.
@@ -30,6 +31,9 @@ On the current 48-example hidden `private_test` split:
 
 These numbers come from a split generated from a private seed that's not
 committed to the repo.  The results on the public dataset are similar.
+
+The harness defaults `gpt-5.5` to no reasoning; otherwise it spends the full
+256-token output budget on reasoning and returns no JSON answers.
 
 In case it's not clear, these results are not good for any of the models I
 tested.  If you have another model you want me to test, send a PR adding
@@ -49,16 +53,16 @@ Correct output:
 {"notes":["F4","A4","F5","A4","G5"]}
 ```
 
-`gpt-5.4`:
+`gpt-5.5`:
 
 ```json
-{"notes":["E4","F4","F5","F4","G5"]}
+{"notes":["C4","D4","G4","B4","A4","E5"]}
 ```
 
-`claude-opus-4-6`:
+`claude-opus-4-7`:
 
 ```json
-{"notes":["E4","F4","G4","E4","C4","D4","E4","F4"]}
+{"notes":["E4","G4","C5","G4","C5"]}
 ```
 
 `gemini-3-flash-preview`:
